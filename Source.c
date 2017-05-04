@@ -31,7 +31,7 @@ int barber(void *inputData) {
 	
 	while(1) {
 		assert(sem_wait(data.customer) == 0);
-  	assert(sem_post(data.barber) == 0);
+  		assert(sem_post(data.barber) == 0);
 		printf("Barber is cutting hair\n");
 		assert(sem_wait(data.customerDone) == 0);
 		assert(sem_post(data.barberDone) == 0);
@@ -65,7 +65,7 @@ int customer(void *inputData) {
 			
 		assert(sem_wait(data.mutex) == 0);
 		data.customers -= 1;    
-			assert(sem_post(data.mutex) == 0);
+		assert(sem_post(data.mutex) == 0);
 			  
 		}  
 }
